@@ -127,7 +127,24 @@
           "font": "",
           "fontSize": 12,
           "fontColor": "rgb(248, 248, 236)",
-          "highlightImage": "img/dpad-relative-highlight-right.png"
+          "highlightImage": "img/dpad-highlight-right.png"
+        },
+        {
+          "type": "text",
+          "name": "infoText",
+          "width": 40,
+          "height": 20,
+          "x": 30,
+          "y": 10,
+          "image": "img/transparent.png",
+          "hidden": false,
+          "text": "Player 2",
+          "textAlign": "center",
+          "font": "",
+          "fontSize": 24,
+          "paddingVertical": 2,
+          "paddingHorizontal": 2,
+          "fontColor": "rgb(248, 248, 236)"
         }
       ],
       "gridX": 5,
@@ -146,5 +163,5 @@
   "layout": "portrait",
   "synchronizeTime": false,
   "deviceMotion": false,
-  "lastEdit": 1524863054
+  "lastEdit": 1524979395
 }

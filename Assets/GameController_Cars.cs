@@ -15,8 +15,6 @@ public class GameController_Cars : VolplaneBehaviour
 
     // Private variables
     private bool gameStarted = false;   // Flag -> indicator for game state
-    private int player1Score = 0;       // Score of player 1
-    private int player2Score = 0;       // Score of player 2
     private float initialCarSpeed;     // Initial ball speed (for resetting speed)
 
 
@@ -50,9 +48,9 @@ public class GameController_Cars : VolplaneBehaviour
 
         // Display a text on the controller indicating which racket this player will play
         if(player.PlayerId == 0)
-            player.ChangeElementText("infoText", "Controls: Up and Down");
+            player.ChangeElementText("infoText", player.Nickname);
         else
-            player.ChangeElementText("infoText", "Controls: Left and Right");
+            player.ChangeElementText("infoText", player.Nickname);
 
         // In this example, the player with the id 0 will play the left racket, the player
         // with the id 1 will play the right one.
@@ -89,38 +87,7 @@ public class GameController_Cars : VolplaneBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        // Counting points
-        /*
-        // If the ball moves behind the left racket
-        if(car.position.x < -9f)
-        {
-            // Update score, score text and reset ball
-            player2Score++;
-            scoreBoard.text = string.Format("{0} | {1}", player1Score, player2Score);
-            ResetBall(true);
-        }
-        // If the ball moves behind the right racket
-        else if(car.position.x > 9f)
-        {
-            // Update score, score text and reset ball
-            player1Score++;
-            scoreBoard.text = string.Format("{0} | {1}", player1Score, player2Score);
-            ResetBall(true);
-        }
 
-        // If the ball reaches the upper boundaries
-        if(car.position.y > 4.5f)
-        {
-            // Reflect ball
-            car.velocity = Vector2.Reflect(car.velocity, Vector2.down);
-        }
-        // If the ball reaches the lower boundaries
-        else if(car.position.y < -4.5f)
-        {
-            // Reflect ball
-            car.velocity = Vector2.Reflect(car.velocity, Vector2.up);
-        }
-        */
     }
 
     /// <summary>
@@ -129,8 +96,6 @@ public class GameController_Cars : VolplaneBehaviour
     private void StartGame()
     {
         gameStarted = true;             // Set flag -> game started
-        player1Score = 0;               // Reset score
-        player2Score = 0;               // Reset score
         pauseText.text = "Welcome to my domain";      // Change pause text
 
         // Set two players active (starting from id = 0)
@@ -142,8 +107,8 @@ public class GameController_Cars : VolplaneBehaviour
         ChangeView(GetPlayer(1), "player2");
 
         // Display a text on the controllers indicating which racket each player plays
-        GetPlayer(0).ChangeElementText("infoText", "Player on the left");
-        GetPlayer(1).ChangeElementText("infoText", "Player on the right");
+        GetPlayer(0).ChangeElementText("infoText", GetPlayer(0).Nickname);
+        GetPlayer(1).ChangeElementText("infoText", GetPlayer(1).Nickname);
 
         // Reset ball and start
         ResetBall(true);

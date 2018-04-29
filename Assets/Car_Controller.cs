@@ -22,8 +22,6 @@ public class Car_Controller : VolplaneBehaviour {
     float minSlippyVelocity = 1.5f;	// <--- Exercise for the viewer
     Rigidbody2D rb;
 
-    private GameController_Cars main;
-
     /// <summary>
     /// 'MonoBehaviour.Start()' method from Unity
     /// Start is called on the frame when a script is enabled just before any of the Update methods
@@ -32,7 +30,6 @@ public class Car_Controller : VolplaneBehaviour {
     private void Start() {
         // Reference to the Game Controller
         rb = GetComponent<Rigidbody2D>();
-        main = GameObject.FindWithTag("GameController").GetComponent<GameController_Cars>();
 
     }
     /// <summary>
