@@ -651,12 +651,38 @@ MonoBehaviour:
   - Terminate
   - Accelerate
   - Duplicate
+  - Educate
+  - Mediate
+  - Inflate
+  - Animate
+  - Narrate
+  - Articulate
+  - Valuate
+  - Negate
+  - Meditate
+  - Fixate
+  - Separate
+  - Intimidate
+  buttonsAvailable: []
   buttonsUsed: []
   swipes:
   - Attack
   - Defend
   - Analyze
-  - Increase
+  - Restore
+  - Trade
+  - Shape
+  - Perceive
+  - Influence
+  - Fabricate
+  - Refine
+  - Counsel
+  - Collate
+  - Enable
+  - Tabulate
+  - Locate
+  - Join
+  swipesAvailable: []
   swipesUsed: []
 --- !u!1001 &1688383672
 Prefab:

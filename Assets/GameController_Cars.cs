@@ -10,7 +10,7 @@ public class GameController_Cars : VolplaneBehaviour
     // Public variables
     public Text pauseText;              // UI text object -> displays that not enough players have connected yet
     public Text scoreBoard;             // UI text object -> displays the score of the two players
-    public ControllerSetup controllers;
+    public ControllerSetup_Dynamic controllers;
     public Rigidbody2D car;            // Balls rigidbody
     public float carSpeed = 3f;        // Speed variable for the ball movement
 
@@ -66,7 +66,7 @@ public class GameController_Cars : VolplaneBehaviour
 
         // When two players are connected and game has not started yet
         // -> let's go
-        if((PlayerCount == 2) && !gameStarted)
+        if((PlayerCount == 4) && !gameStarted)
             StartGame();
     }
 
@@ -101,17 +101,19 @@ public class GameController_Cars : VolplaneBehaviour
 
         // Set two players active (starting from id = 0)
         // This will enable the first two connected players.
-        SetPlayersActive(2);
+        SetPlayersActive(4);
 
         // Setup Controllers
-        GetPlayer(0).ChangeView("Spaceteam");
-        GetPlayer(1).ChangeView("Spaceteam");
-        controllers.LoadController(GetPlayer(0));
-        controllers.LoadController(GetPlayer(1));
+        foreach (VPlayer player in GetAllActivePlayers()) {
+            //player.ChangeView("QuadScreen");
+            controllers.LoadController(player);
+        }
 
         // Display a text on the controllers indicating which racket each player plays
         GetPlayer(0).ChangeElementText("infoText", GetPlayer(0).Nickname);
         GetPlayer(1).ChangeElementText("infoText", GetPlayer(1).Nickname);
+        GetPlayer(2).ChangeElementText("infoText", GetPlayer(0).Nickname);
+        GetPlayer(3).ChangeElementText("infoText", GetPlayer(1).Nickname);
 
         // Reset ball and start
         ResetBall(true);
