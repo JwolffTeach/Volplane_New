@@ -151,6 +151,105 @@
       "gridY": 5,
       "color": "rgb(107, 103, 131)",
       "format": "contain"
+    },
+    "Spaceteam": {
+      "content": [
+        {
+          "type": "button",
+          "name": "Communicate",
+          "width": 40,
+          "height": 20,
+          "x": 0,
+          "y": 0,
+          "image": "img/button.png",
+          "hidden": false,
+          "text": "Communicate",
+          "font": "",
+          "fontSize": 12,
+          "fontColor": "rgb(248, 248, 236)",
+          "highlightImage": "img/button-highlight.png"
+        },
+        {
+          "type": "button",
+          "name": "Terminate",
+          "width": 40,
+          "height": 20,
+          "x": 0,
+          "y": 0,
+          "image": "img/button.png",
+          "hidden": false,
+          "text": "Terminate",
+          "font": "",
+          "fontSize": 12,
+          "fontColor": "rgb(248, 248, 236)",
+          "highlightImage": "img/button-highlight.png"
+        },
+        {
+          "type": "button",
+          "name": "Accelerate",
+          "width": 40,
+          "height": 20,
+          "x": 0,
+          "y": 0,
+          "image": "img/button.png",
+          "hidden": false,
+          "text": "Accelerate",
+          "font": "",
+          "fontSize": 12,
+          "fontColor": "rgb(248, 248, 236)",
+          "highlightImage": "img/button-highlight.png"
+        },
+        {
+          "type": "button",
+          "name": "Duplicate",
+          "width": 40,
+          "height": 20,
+          "x": 0,
+          "y": 0,
+          "image": "img/button.png",
+          "hidden": false,
+          "text": "Duplicate",
+          "font": "",
+          "fontSize": 12,
+          "fontColor": "rgb(248, 248, 236)",
+          "highlightImage": "img/button-highlight.png"
+        },
+        {
+          "type": "swipe",
+          "name": "Attack",
+          "width": 50,
+          "height": 20,
+          "x": 25,
+          "y": 80,
+          "image": "img/swipe.png",
+          "hidden": false,
+          "analog": true,
+          "distance": 30,
+          "diagonal": false,
+          "text": "Swipe Me",
+          "font": "",
+          "fontSize": 12,
+          "fontColor": "rgb(248, 248, 236)",
+          "highlightImage": "img/swipe-highlight.png"
+        },
+        {
+          "type": "touch",
+          "name": "Defend",
+          "width": 40,
+          "height": 20,
+          "x": 30,
+          "y": 80,
+          "image": "img/touch.png",
+          "hidden": false,
+          "text": "Defend",
+          "font": "",
+          "fontSize": 12,
+          "fontColor": "rgb(248, 248, 236)"
+        }
+      ],
+      "gridX": 5,
+      "gridY": 5,
+      "color": "rgb(31, 29, 42)"
     }
   },
   "fontList": [
@@ -163,5 +262,5 @@
   "layout": "portrait",
   "synchronizeTime": false,
   "deviceMotion": false,
-  "lastEdit": 1524979395
+  "lastEdit": 1525103840
 }

@@ -10,12 +10,14 @@ public class GameController_Cars : VolplaneBehaviour
     // Public variables
     public Text pauseText;              // UI text object -> displays that not enough players have connected yet
     public Text scoreBoard;             // UI text object -> displays the score of the two players
+    public ControllerSetup controllers;
     public Rigidbody2D car;            // Balls rigidbody
     public float carSpeed = 3f;        // Speed variable for the ball movement
 
     // Private variables
     private bool gameStarted = false;   // Flag -> indicator for game state
     private float initialCarSpeed;     // Initial ball speed (for resetting speed)
+
 
 
     /// <summary>
@@ -93,8 +95,7 @@ public class GameController_Cars : VolplaneBehaviour
     /// <summary>
     /// Starts the pong game.
     /// </summary>
-    private void StartGame()
-    {
+    private void StartGame() {
         gameStarted = true;             // Set flag -> game started
         pauseText.text = "Welcome to my domain";      // Change pause text
 
@@ -102,9 +103,11 @@ public class GameController_Cars : VolplaneBehaviour
         // This will enable the first two connected players.
         SetPlayersActive(2);
 
-        // Change the controller view for all active players (to the view named 'game')
-        ChangeViewAllActive("game");
-        ChangeView(GetPlayer(1), "player2");
+        // Setup Controllers
+        GetPlayer(0).ChangeView("Spaceteam");
+        GetPlayer(1).ChangeView("Spaceteam");
+        controllers.LoadController(GetPlayer(0));
+        controllers.LoadController(GetPlayer(1));
 
         // Display a text on the controllers indicating which racket each player plays
         GetPlayer(0).ChangeElementText("infoText", GetPlayer(0).Nickname);
